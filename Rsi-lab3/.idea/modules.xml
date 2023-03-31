@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GrpcClient/GrpcClient.iml" filepath="$PROJECT_DIR$/GrpcClient/GrpcClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GrpcInterface/GrpcInterface.iml" filepath="$PROJECT_DIR$/GrpcInterface/GrpcInterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GrpcServer/GrpcServer.iml" filepath="$PROJECT_DIR$/GrpcServer/GrpcServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rsi-lab3.iml" filepath="$PROJECT_DIR$/Rsi-lab3.iml" />
+    </modules>
+  </component>
+</project>
