@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "com.example.grpc";
+option java_outer_classname = "ImageServiceProto";
+
+service ImageService {
+  rpc UploadImage(stream ImageChunk) returns (UploadStatus) {}
+  rpc DownloadImage(ImageRequest) returns (stream ImageChunk) {}
+}
+
+message ImageChunk {
+  bytes data = 1;
+}
+
+message ImageRequest {
+  string id = 1;
+}
+
+message UploadStatus {
+  bool success = 1;
+}
+
