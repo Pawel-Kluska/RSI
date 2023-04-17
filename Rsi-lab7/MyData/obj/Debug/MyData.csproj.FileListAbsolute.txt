@@ -1,0 +1,8 @@
+C:\Users\pawel\Desktop\WcfServiceLibrary\MyData\bin\Debug\MyData.exe.config
+C:\Users\pawel\Desktop\WcfServiceLibrary\MyData\bin\Debug\MyData.exe
+C:\Users\pawel\Desktop\WcfServiceLibrary\MyData\bin\Debug\MyData.pdb
+C:\Users\pawel\Desktop\WcfServiceLibrary\MyData\obj\Debug\MyData.csproj.AssemblyReference.cache
+C:\Users\pawel\Desktop\WcfServiceLibrary\MyData\obj\Debug\MyData.csproj.SuggestedBindingRedirects.cache
+C:\Users\pawel\Desktop\WcfServiceLibrary\MyData\obj\Debug\MyData.csproj.CoreCompileInputs.cache
+C:\Users\pawel\Desktop\WcfServiceLibrary\MyData\obj\Debug\MyData.exe
+C:\Users\pawel\Desktop\WcfServiceLibrary\MyData\obj\Debug\MyData.pdb

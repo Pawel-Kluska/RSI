@@ -1,0 +1,15 @@
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\bin\Debug\WcfServiceHost.exe.config
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\bin\Debug\WcfServiceHost.exe
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\bin\Debug\WcfServiceHost.pdb
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\bin\Debug\WcfServiceLibrary.dll
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\bin\Debug\WcfServiceLibrary.pdb
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\bin\Debug\WcfServiceLibrary.dll.config
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\obj\Debug\WcfServiceHost.csproj.AssemblyReference.cache
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\obj\Debug\WcfServiceHost.csproj.SuggestedBindingRedirects.cache
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\obj\Debug\WcfServiceHost.csproj.CoreCompileInputs.cache
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\obj\Debug\WcfServiceHost.csproj.CopyComplete
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\obj\Debug\WcfServiceHost.exe
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\obj\Debug\WcfServiceHost.pdb
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\bin\Debug\MyData.exe
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\bin\Debug\MyData.pdb
+C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceHost\bin\Debug\MyData.exe.config
