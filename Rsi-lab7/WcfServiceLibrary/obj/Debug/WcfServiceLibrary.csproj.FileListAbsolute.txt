@@ -1,7 +1,7 @@
-C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll.config
-C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll
-C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.pdb
-C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.csproj.AssemblyReference.cache
-C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.csproj.CoreCompileInputs.cache
-C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.dll
-C:\Users\pawel\Desktop\WcfServiceLibrary\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.pdb
+C:\Users\pawel\Desktop\Rsi-lab7\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll.config
+C:\Users\pawel\Desktop\Rsi-lab7\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll
+C:\Users\pawel\Desktop\Rsi-lab7\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.pdb
+C:\Users\pawel\Desktop\Rsi-lab7\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.csproj.AssemblyReference.cache
+C:\Users\pawel\Desktop\Rsi-lab7\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.csproj.CoreCompileInputs.cache
+C:\Users\pawel\Desktop\Rsi-lab7\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.dll
+C:\Users\pawel\Desktop\Rsi-lab7\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.pdb

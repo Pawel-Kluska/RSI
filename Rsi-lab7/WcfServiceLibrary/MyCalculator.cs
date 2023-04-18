@@ -56,12 +56,10 @@ namespace WcfServiceLibrary
             return n1 % n2;
         }
 
-        async public Task<int> iCountPrimes(int n1, int n2)
+        async public Task<(int count, int maxPrime)> iCountPrimes(int n1, int n2)
         {
                 int count = 0;
                 int maxPrime = 0;
-
-                Thread.Sleep(5000);
 
              for (int i = n1; i <= n2; i++)
                 {
@@ -83,10 +81,8 @@ namespace WcfServiceLibrary
                     }
                 }
 
-                Console.WriteLine("Number of primes: " + count);
-                Console.WriteLine("Largest prime: " + maxPrime);
 
-                return count;
+                return (count, maxPrime);
             }
     }
 }

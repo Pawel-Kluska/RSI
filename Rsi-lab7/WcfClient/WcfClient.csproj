@@ -63,9 +63,18 @@
     <None Include="Connected Services\ServiceReference1\ServiceBaseName1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceReference1\ServiceBaseName2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyData\MyData.csproj">
+      <Project>{dfed797a-ebf3-4a08-8c93-5e52e92a569d}</Project>
+      <Name>MyData</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
@@ -84,12 +93,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MyData\MyData.csproj">
-      <Project>{dfed797a-ebf3-4a08-8c93-5e52e92a569d}</Project>
-      <Name>MyData</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

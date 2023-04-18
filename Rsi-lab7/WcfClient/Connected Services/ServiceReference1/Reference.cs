@@ -46,10 +46,10 @@ namespace WcfClient.ServiceReference1 {
         System.Threading.Tasks.Task<int> iModAsync(int n1, int n2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/iCountPrimes", ReplyAction="http://tempuri.org/ICalculator/iCountPrimesResponse")]
-        int iCountPrimes(int n1, int n2);
+        System.ValueTuple<int, int> iCountPrimes(int n1, int n2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICalculator/iCountPrimes", ReplyAction="http://tempuri.org/ICalculator/iCountPrimesResponse")]
-        System.Threading.Tasks.Task<int> iCountPrimesAsync(int n1, int n2);
+        System.Threading.Tasks.Task<System.ValueTuple<int, int>> iCountPrimesAsync(int n1, int n2);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -119,11 +119,11 @@ namespace WcfClient.ServiceReference1 {
             return base.Channel.iModAsync(n1, n2);
         }
         
-        public int iCountPrimes(int n1, int n2) {
+        public System.ValueTuple<int, int> iCountPrimes(int n1, int n2) {
             return base.Channel.iCountPrimes(n1, n2);
         }
         
-        public System.Threading.Tasks.Task<int> iCountPrimesAsync(int n1, int n2) {
+        public System.Threading.Tasks.Task<System.ValueTuple<int, int>> iCountPrimesAsync(int n1, int n2) {
             return base.Channel.iCountPrimesAsync(n1, n2);
         }
     }

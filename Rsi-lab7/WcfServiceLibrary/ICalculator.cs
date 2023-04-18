@@ -25,6 +25,6 @@ namespace WcfServiceLibrary
         int iMod(int n1, int n2);
 
         [OperationContract]
-        Task<int> iCountPrimes(int n1, int n2);
+        Task<(int count, int maxPrime)> iCountPrimes(int n1, int n2);
     }
 }
