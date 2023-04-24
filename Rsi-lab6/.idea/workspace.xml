@@ -5,24 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa858c75-6561-4433-843b-6881ef117ab9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/GrpcClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcInterface/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcInterface/src/main/proto/GrpcInterface.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcInterface/target/GrpcInterface-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcInterface/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcInterface/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcInterface/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/GrpcServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/src/main/java/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/src/main/java/PersonExistsEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/src/main/java/PersonNotFoundEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/src/main/java/PersonRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rsi-lab-8/src/main/java/PersonRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +156,9 @@
       <workItem from="1680555545198" duration="595000" />
       <workItem from="1680586568065" duration="4198000" />
       <workItem from="1681641749579" duration="654000" />
+      <workItem from="1681657669797" duration="65000" />
+      <workItem from="1682018695062" duration="17000" />
+      <workItem from="1682019015910" duration="57000" />
     </task>
     <servers />
   </component>

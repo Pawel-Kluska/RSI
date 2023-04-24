@@ -1,3 +1,5 @@
+package com.example;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -7,7 +9,7 @@ import java.util.Locale;
 
 public class MyData {
 
-    public static void getData() {
+    public static void info() {
         System.out.println("Paweł Kluska, 260391");
         System.out.println("Katya Zyatikava, 245891");
 
