@@ -1,6 +1,9 @@
 package org.example.jaxws.client;
 
 import com.example.MyData;
+import com.sun.xml.ws.client.BindingProviderProperties;
+import jakarta.xml.ws.BindingProvider;
+import jakarta.xml.ws.WebServiceException;
 import org.example.jaxws.server_topdown.*;
 
 import java.util.List;
@@ -15,6 +18,8 @@ public class ESClient {
         MyData.info();
         PersonService_Service pService = new PersonService_Service();
         PersonService pServiceProxy = pService.getPersonServiceImplPort();
+
+        ((BindingProvider) pServiceProxy).getRequestContext().put(BindingProviderProperties.REQUEST_TIMEOUT, 1000);
 
         boolean isRunning = true;
 
@@ -66,6 +71,8 @@ public class ESClient {
                 System.out.println("Nie znaleziono użytkownika");
             } catch (PersonExistsEx_Exception e) {
                 System.out.println("Taki użytkownik już istnieje");
+            } catch (WebServiceException e) {
+                System.out.println("Czas oczekiwania został przekroczony");
             }
         }
     }
