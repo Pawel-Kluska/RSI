@@ -3,13 +3,9 @@ package com.example.server;
 
 import com.example.server.exceptions.BadRequestEx;
 import com.example.server.exceptions.PersonNotFoundEx;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import net.minidev.json.JSONObject;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
-import org.springframework.hateoas.Link;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -107,5 +103,18 @@ public class PersonController {
             System.out.println("...DELETE Exception");
             throw e;
         }
+    }
+
+    @GetMapping("/count")
+    public EntityModel<JSONObject> countPersons() {
+        System.out.println("...called GET");
+        int count = repository.countPersons();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("count", count);
+
+        return EntityModel.of(jsonObject,
+                linkTo(methodOn(PersonController.class).countPersons()).withSelfRel(),
+                linkTo(methodOn(PersonController.class).getAllPersons()).withRel("list all")
+        );
     }
 }

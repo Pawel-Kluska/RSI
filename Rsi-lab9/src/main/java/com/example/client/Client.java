@@ -1,5 +1,6 @@
 package com.example.client;
 
+import com.example.MyData;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -15,19 +16,22 @@ import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) throws JsonProcessingException {
+        MyData.info();
         RestTemplate restTemplate = new RestTemplate();
         Scanner scanner = new Scanner(System.in);
         ObjectMapper objectMapper = new ObjectMapper();
+        String host = "localhost:8080";
 
         int option = 0;
 
-        while (option != 6) {
+        while (option != 7) {
             System.out.println("1. Wyświetl wszystkich");
             System.out.println("2. Wyświetl użytkownika o podanym id");
             System.out.println("3. Dodaj użytkownika");
             System.out.println("4. Zaktualizuj użytkownika");
             System.out.println("5. Usuń użytkownika");
-            System.out.println("6. Wyjdź");
+            System.out.println("6. Policz użytkowników");
+            System.out.println("7. Wyjdź");
 
             try {
 
@@ -36,7 +40,7 @@ public class Client {
 
                 switch (option) {
                     case 1:
-                        String jsonString = restTemplate.getForObject("http://localhost:8080/persons", String.class);
+                        String jsonString = restTemplate.getForObject("http://" + host + "/persons", String.class);
                         JsonNode jsonNode = objectMapper.readTree(jsonString);
                         JsonNode rootNode = jsonNode.get("_embedded");
                         if (rootNode == null) {
@@ -52,7 +56,7 @@ public class Client {
                     case 2:
                         System.out.println("Podaj id użytkownika");
                         int id = scanner.nextInt();
-                        Person person = restTemplate.getForObject("http://localhost:8080/persons/" + id, Person.class);
+                        Person person = restTemplate.getForObject("http://" + host + "/persons/" + id, Person.class);
                         System.out.println(person);
                         break;
                     case 3:
@@ -65,7 +69,7 @@ public class Client {
                         System.out.println("Podaj email");
                         String email = scanner.next();
                         Person newPerson = restTemplate
-                                .postForObject("http://localhost:8080/persons",
+                                .postForObject("http://" + host + "/persons",
                                         new Person(id2, name, age, email), Person.class);
                         System.out.println(newPerson);
                         break;
@@ -81,7 +85,7 @@ public class Client {
 
                         HttpEntity<Person> requestEntity = new HttpEntity<>(new Person(id3, name2, age2, email2));
 
-                        Person updatedPerson = restTemplate.exchange("http://localhost:8080/persons",
+                        Person updatedPerson = restTemplate.exchange("http://" + host + "/persons",
                                 HttpMethod.PUT,
                                 requestEntity,
                                 Person.class).getBody();
@@ -90,13 +94,24 @@ public class Client {
                     case 5:
                         System.out.println("Podaj id użytkownika");
                         int id4 = scanner.nextInt();
-                        restTemplate.exchange("http://localhost:8080/persons/" + id4,
+                        restTemplate.exchange("http://" + host + "/persons/" + id4,
                                 HttpMethod.DELETE,
                                 null, String.class);
 
                         System.out.println("Deleted");
                         break;
                     case 6:
+                        String jsonString2 = restTemplate.getForObject("http://" + host + "/persons/count", String.class);
+                        JsonNode jsonNode1 = objectMapper.readTree(jsonString2);
+                        JsonNode rootNode2 = jsonNode1.get("count");
+                        String personCount = objectMapper.readValue(rootNode2.toString(),
+                                new TypeReference<String>() {
+                                });
+
+                        System.out.println("Liczba użytkowników: " + personCount);
+                        break;
+
+                    case 7:
                         System.out.println("Wyjdź");
                         break;
                 }

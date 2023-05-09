@@ -13,6 +13,7 @@ public class PersonRepositoryImpl implements PersonRepository {
     public PersonRepositoryImpl() {
         personList = new ArrayList<Person>();
         personList.add(new Person(1, "Jan", 20, "jan@gmail.com"));
+        personList.add(new Person(2, "Adam", 25, "adam@gmail.com"));
     }
 
     @Override
@@ -63,5 +64,10 @@ public class PersonRepositoryImpl implements PersonRepository {
         }
         personList.add(person);
         return person;
+    }
+
+    @Override
+    public int countPersons() {
+        return personList.size();
     }
 }
