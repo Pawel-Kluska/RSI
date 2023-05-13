@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Repository</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Person Repository</h1>
+<button id="getAll">Get all persons</button>
+<button id="count">Get number of persons</button>
+<hr>
+<div class="container">
+    <div class="form">
+        <h4>Person form</h4>
+        <div>
+            <label for="id">Id:</label>
+            <input type="number" id="id">
+        </div>
+
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+        </div>
+
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" id="age">
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+        </div>
+
+        <button id="create">Create</button>
+        <button id="update">Update</button>
+    </div>
+    <hr>
+
+    <div class="form">
+        <h4>Id form</h4>
+        <div>
+            <label for="id2">Id:</label>
+            <input type="number" id="id2">
+        </div>
+
+        <button id="getById">Get by id</button>
+        <button id="delete">Delete</button>
+    </div>
+</div>
+<hr>
+
+<div>
+    <label for="filter">Filter by:</label>
+    <select id="filter">
+        <option value="">Select attribute</option>
+        <option value="name">Name</option>
+        <option value="age">Age</option>
+        <option value="email">Email</option>
+    </select>
+    <label for="filter-value"></label>
+    <input type="text" id="filter-value">
+    <button id="filter-button">Filter</button>
+    <button id="clear-filter">Clear Filter</button>
+</div>
+
+<hr>
+
+<div>
+    <h2>Persons table</h2>
+    <table id="entity-list"></table>
+</div>
+
+<script>
+    // DOM elements
+    const personListElement = document.getElementById('entity-list');
+
+    // Render entity list
+    const renderPersonList = (persons) => {
+        personListElement.innerHTML = '';
+        makeTableHeader();
+        persons.forEach((person) => {
+            const tr = document.createElement('tr');
+            for (const key in person) {
+                const td = document.createElement('td');
+                td.innerHTML = person[key];
+                tr.appendChild(td);
+            }
+            personListElement.appendChild(tr);
+        });
+    };
+
+    const makeTableHeader = () => {
+        const tableHeaderRow = document.createElement('tr');
+
+        const idHeader = document.createElement('th');
+        idHeader.textContent = 'Id';
+        tableHeaderRow.appendChild(idHeader);
+
+        const nameHeader = document.createElement('th');
+        nameHeader.textContent = 'Name';
+        tableHeaderRow.appendChild(nameHeader);
+
+        const ageHeader = document.createElement('th');
+        ageHeader.textContent = 'Age';
+        tableHeaderRow.appendChild(ageHeader);
+
+        const emailHeader = document.createElement('th');
+        emailHeader.textContent = 'Email';
+        tableHeaderRow.appendChild(emailHeader);
+        personListElement.appendChild(tableHeaderRow);
+    }
+
+
+</script>
+<script src="api-serivce.js"></script>
+<script src="buttons.js"></script>
+<script src="filter.js"></script>
+</body>
+</html>
