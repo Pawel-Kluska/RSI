@@ -1,10 +1,10 @@
 // Get all entities
 // API endpoint
-const apiUrl = 'http://localhost:8080/persons';
+const apiUrl = 'http://192.168.43.30:8080';
 
 const getPersons = async () => {
 
-    const response = await fetch(apiUrl);
+    const response = await fetch(`${apiUrl}/persons`);
     const data = await response.json();
     return data;
 
@@ -13,7 +13,7 @@ const getPersons = async () => {
 // Get entity by id
 const getPersonById = async (id) => {
 
-    const response = await fetch(`${apiUrl}/${id}`);
+    const response = await fetch(`${apiUrl}/persons/${id}`);
     if (response.status === 404) {
         throw new Error('Person not found with id: ' + id);
     }
@@ -25,7 +25,7 @@ const getPersonById = async (id) => {
 // Create entity
 const createPerson = async (person) => {
 
-    const response = await fetch(apiUrl, {
+    const response = await fetch(`${apiUrl}/persons`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ const createPerson = async (person) => {
 
 // Update entity
 const updatePerson = async (person) => {
-    const response = await fetch(`${apiUrl}`, {
+    const response = await fetch(`${apiUrl}/persons`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -60,7 +60,7 @@ const updatePerson = async (person) => {
 // Delete entity
 const deletePerson = async (id) => {
     const response = await fetch
-    (`${apiUrl}/${id}`, {
+    (`${apiUrl}/persons/${id}`, {
         method: 'DELETE'
     });
     if (response.status === 404) {
@@ -74,10 +74,17 @@ const deletePerson = async (id) => {
 // Count entities
 const countPersons = async () => {
     try {
-        const response = await fetch(`${apiUrl}/count`);
+        const response = await fetch(`${apiUrl}/persons/count`);
         const data = await response.json();
         return data;
     } catch (error) {
         console.error(error);
     }
+};
+
+// Get authors
+const getAuthors = async () => {
+    const response = await fetch(`${apiUrl}/authors`);
+    const data = await response.json();
+    return data;
 };

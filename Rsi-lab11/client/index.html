@@ -7,8 +7,16 @@
 </head>
 <body>
 <h1>Person Repository</h1>
+<button id="authors">Authors</button>
+<div id="authorsList">
+
+</div>
+<hr>
 <button id="getAll">Get all persons</button>
 <button id="count">Get number of persons</button>
+<div id="countPersonList">
+
+</div>
 <hr>
 <div class="container">
     <div class="form">
@@ -90,6 +98,36 @@
             personListElement.appendChild(tr);
         });
     };
+
+    const renderAuthorsList = (authors) => {
+        const authorsListElement = document.getElementById('authorsList');
+        authorsListElement.innerHTML = '';
+
+        const h1 = document.createElement('h3');
+        h1.innerHTML = "Autorzy:"
+        authorsListElement.appendChild(h1);
+
+        const p1 = document.createElement('p');
+        p1.innerHTML = authors.author1;
+        authorsListElement.appendChild(p1);
+
+        const p2 = document.createElement('p');
+        p2.innerHTML = authors.author2;
+        authorsListElement.appendChild(p2);
+    };
+
+    const renderCountPerson = (response) => {
+        const authorsListElement = document.getElementById('countPersonList');
+        authorsListElement.innerHTML = '';
+
+        const h1 = document.createElement('h3');
+        h1.innerHTML = "Liczba osób:"
+        authorsListElement.appendChild(h1);
+
+        const p1 = document.createElement('p');
+        p1.innerHTML = response;
+        authorsListElement.appendChild(p1);
+    }
 
     const makeTableHeader = () => {
         const tableHeaderRow = document.createElement('tr');

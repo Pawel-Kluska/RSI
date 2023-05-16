@@ -9,6 +9,7 @@ import java.util.List;
 public class PersonRepositoryImpl implements PersonRepository {
 
     private List<Person> personList;
+    private int currentId = 4;
 
     public PersonRepositoryImpl() {
         personList = new ArrayList<Person>();
@@ -58,6 +59,7 @@ public class PersonRepositoryImpl implements PersonRepository {
 
     @Override
     public Person addPerson(Person person) throws BadRequestEx {
+        person.setId(currentId++);
         for (Person thePerson : personList) {
             if (thePerson.getId() == person.getId()) {
                 throw new BadRequestEx(person.getId());

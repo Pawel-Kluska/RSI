@@ -14,6 +14,8 @@ const updateButton = document.getElementById('update');
 const getByIdButton = document.getElementById('getById');
 const deleteButton = document.getElementById('delete');
 
+const authorButton = document.getElementById('authors');
+
 
 getAllButton.addEventListener('click', async () => {
     try {
@@ -28,7 +30,7 @@ countButton.addEventListener('click', async () => {
     try {
         const count = await countPersons();
 
-        alert(`Total number of entities: ${count}`);
+        renderCountPerson(count)
     } catch (error) {
         alert(error.message);
     }
@@ -37,7 +39,6 @@ countButton.addEventListener('click', async () => {
 createButton.addEventListener('click', async () => {
     try {
         const entity = {
-            id: idInput.value,
             name: nameInput.value,
             age: ageInput.value,
             email: emailInput.value
@@ -82,6 +83,18 @@ deleteButton.addEventListener('click', async () => {
         const isDeleted = await deletePerson(id);
         const entities = await getPersons();
         renderPersonList(entities);
+    } catch (error) {
+        alert(error.message);
+    }
+
+});
+
+authorButton.addEventListener('click', async () => {
+    try {
+        const id = idInput2.value;
+        const response = await getAuthors();
+        // alert("Autorzy: \n" + response.author1 + '\n' + response.author2)
+        renderAuthorsList(response)
     } catch (error) {
         alert(error.message);
     }
