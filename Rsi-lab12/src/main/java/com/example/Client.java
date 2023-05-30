@@ -12,8 +12,11 @@ public class Client {
     private final static String QUEUE_NAME = "hello";
 
     public static void main(String[] argv) throws Exception {
+        MyData.info();
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
+        factory.setUsername("pawel");
+        factory.setPassword("pawel");
+        factory.setHost("10.108.127.202");
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
