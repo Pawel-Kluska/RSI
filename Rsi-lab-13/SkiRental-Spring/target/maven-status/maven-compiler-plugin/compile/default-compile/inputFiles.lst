@@ -1,0 +1,15 @@
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/entity/Equipment.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/SkiRentalApplication.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/config/SimpleCORSFilter.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/restController/CategoryController.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/restController/EquipmentController.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/repository/CategoryRepository.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/service/EquipmentService.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/exception/EntityNotFoundException.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/config/SpringFoxConfig.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/service/CategoryService.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/repository/EquipmentRepository.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/exception/InvalidEntityException.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/config/DataInitializer.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/entity/Category.java
+/home/pawelk/RSI/Rsi-lab-13/SkiRental-Spring/src/main/java/com/pwr/skirental/config/ModelMapperConfig.java

@@ -1,0 +1,52 @@
+version: '3'
+
+services:
+  db:
+    container_name: db
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=ski_rental
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  backend:
+    container_name: backend
+    build:
+      context: ./SkiRental-Spring
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - db
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - POSTGRES_URL=jdbc:postgresql://db:5432/ski_rental
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./SkiRental-Vue/
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    restart: always
+    depends_on:
+      - backend
+    environment:
+      - NODE_ENV=production
+      - API_URL=http://localhost:8080
+    expose:
+      - "80"
+
+volumes:
+  db:
+    driver: local
