@@ -11,6 +11,7 @@
         <li class="nav-item active"><a class="nav-link" href="/equipments">Tabela sprzętu</a></li>
         <li class="nav-item active"><a class="nav-link" href="/categories">Tabela kategorii</a></li>
         <li class="nav-item active"><a class="nav-link" href="/borrowings">Wypożyczenia</a></li>
+        <li class="nav-item active"><a class="nav-link" href="/authors">Autorzy</a></li>
       </ul>
     </div>
   </nav>

@@ -1,6 +1,10 @@
 <template>
   <CustomNavbar></CustomNavbar>
   <div id="categories-table" class="container bg-light pt-3 mt-5 mb-5 pb-3 rounded-3">
+    <h4 v-if="!this.serverAvailable" class="error-message">
+      Nie udało się nawiązać połączenia z serwerem
+    </h4>
+
     <table id="table">
       <thead>
       <tr class="header">
@@ -48,6 +52,7 @@ export default {
       categories: [],
       currentPage: 1,
       itemsPerPage: 3,
+      serverAvailable: true,
     }
   },
 
@@ -76,8 +81,10 @@ export default {
         const data = await response.json()
         this.categories = data
         this.categories.sort((a, b) => (a.id > b.id) ? 1 : -1)
+        this.serverAvailable = true;
       } catch (error) {
         console.error(error)
+        this.serverAvailable = false;
       }
     },
     async deleteCategory(itemId) {
@@ -111,5 +118,9 @@ tr {
 
 .header {
   height: 50px;
+}
+
+.error-message {
+  color: #d33c40;
 }
 </style>

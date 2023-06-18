@@ -2,6 +2,9 @@
   <CustomNavbar></CustomNavbar>
   <div class="container bg-light pt-3 mt-5 mb-5 pb-5 rounded-3">
     <div class="container-fluid mt-3">
+      <h4 v-if="!this.serverAvailable" class="error-message">
+        Nie udało się nawiązać połączenia z serwerem
+      </h4>
       <h3>Filtruj</h3>
       <select v-model="currentCategory" @change="updateView()">
         <option @focus="clearStatus">Wszystkie</option>
@@ -57,6 +60,7 @@ export default {
       categories: [],
       amountOfBorrowedEquipment: '',
       currentCategory: 'Wszystkie',
+      serverAvailable: true,
     }
   },
 
@@ -72,16 +76,21 @@ export default {
         let equipments = await response.json()
         this.equipments = equipments
         this.equipments.sort((a, b) => (a.id > b.id) ? 1 : -1)
+        this.serverAvailable = true
       } catch (error) {
         console.error(error)
+        this.serverAvailable = false
       }
     },
     async getCategories() {
       try {
         const response = await fetch(`${apiLocation}/get/categories`)
         this.categories = await response.json()
+        this.categories.sort((a, b) => (a.id > b.id) ? 1 : -1)
+        this.serverAvailable = true
       } catch (error) {
         console.error(error)
+        this.serverAvailable = false
       }
     },
 
@@ -91,9 +100,10 @@ export default {
         const response = await fetch(`${apiLocation}/get/equipments/category/${currentCategory.id}`)
         this.equipments = await response.json()
         this.equipments.sort((a, b) => (a.id > b.id) ? 1 : -1)
-
+        this.serverAvailable = true
       } catch (error) {
         console.error(error)
+        this.serverAvailable = false
       }
     },
 
@@ -131,7 +141,7 @@ export default {
         const response = await fetch(`${apiLocation}/get/equipments/countBorrowed/category/${currentCategory.id}`)
         const data = await response.json()
         this.amountOfBorrowedEquipment = data
-        console.log(this.amountOfBorrowedEquipment)
+
       } catch (error) {
         console.error(error)
       }
@@ -151,5 +161,7 @@ export default {
 
 
 <style scoped>
-
+.error-message {
+  color: #d33c40;
+}
 </style>

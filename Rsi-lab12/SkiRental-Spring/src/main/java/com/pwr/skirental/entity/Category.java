@@ -3,7 +3,9 @@ package com.pwr.skirental.entity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @Entity
@@ -20,6 +22,7 @@ public class Category {
     @Column(nullable = false)
     private Long id;
 
+    @NotBlank(message = "Name is mandatory")
     private String name;
 
     @Override

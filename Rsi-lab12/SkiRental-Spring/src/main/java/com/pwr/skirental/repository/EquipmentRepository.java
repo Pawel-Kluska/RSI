@@ -9,4 +9,6 @@ public interface EquipmentRepository extends JpaRepository<Equipment, Long> {
     List<Equipment> findByCategoryId(Long name);
     Integer countByIsBorrowed(boolean borrowed);
     Integer countByIsBorrowedAndCategoryId(boolean borrowed, Long categoryId);
+
+    List<Equipment> findBySize(String size);
 }

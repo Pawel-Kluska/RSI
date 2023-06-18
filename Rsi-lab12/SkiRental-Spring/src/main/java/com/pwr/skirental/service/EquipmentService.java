@@ -71,4 +71,8 @@ public class EquipmentService {
     public Integer countBorrowed(Long categoryId) {
         return equipmentRepository.countByIsBorrowedAndCategoryId(true, categoryId);
     }
+
+    public List<Equipment> getEquipmentsBySize(String size) {
+        return equipmentRepository.findBySize(size);
+    }
 }

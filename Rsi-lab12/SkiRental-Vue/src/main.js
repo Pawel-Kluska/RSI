@@ -13,6 +13,7 @@ import CategoryUpdate from "@/components/category/CategoryUpdate.vue";
 import EquipmentUpdate from "@/components/equipment/EquipmentUpdate.vue";
 import Main from "@/components/Main.vue";
 import Borrowing from "@/components/borrowing/Borrowing.vue";
+import Authors from "@/components/authors/Authors.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -20,6 +21,7 @@ const router = createRouter({
         {
             path: '/',
             component: Main,
+            name: 'main'
         },
         {
             path: '/equipments',
@@ -45,6 +47,11 @@ const router = createRouter({
             path: '/borrowings',
             name: 'borrowings',
             component: Borrowing,
+        },
+        {
+            path: '/authors',
+            name: 'authors',
+            component: Authors,
         }
     ]
 })

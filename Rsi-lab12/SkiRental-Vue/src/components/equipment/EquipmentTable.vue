@@ -1,6 +1,9 @@
 <template>
   <CustomNavbar></CustomNavbar>
   <div id="equipments-table" class="container bg-light mt-5 mb-5 pb-3 rounded-3">
+    <h4 v-if="!this.serverAvailable" class="error-message mt-5 pt-3">
+      Nie udało się nawiązać połączenia z serwerem
+    </h4>
     <table id="table" class="table">
       <thead>
       <tr class="header">
@@ -63,6 +66,7 @@ export default {
       equipments: [],
       currentPage: 1,
       itemsPerPage: 5,
+      serverAvailable: true,
     }
   },
 
@@ -76,9 +80,10 @@ export default {
         const data = await response.json()
         this.equipments = data
         this.equipments.sort((a, b) => (a.id > b.id) ? 1 : -1)
-        console.log(this.equipments)
+        this.serverAvailable = true;
       } catch (error) {
         console.error(error)
+        this.serverAvailable = false;
       }
     },
     paginatedEquipments() {
@@ -135,5 +140,8 @@ tr {
   height: 50px;
 }
 
+.error-message {
+  color: #d33c40;
+}
 
 </style>

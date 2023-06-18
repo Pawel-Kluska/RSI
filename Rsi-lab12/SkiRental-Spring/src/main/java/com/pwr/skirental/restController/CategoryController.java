@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Collection;
 
 @RestController
@@ -31,7 +32,7 @@ public class CategoryController {
     }
 
     @PostMapping("/post/category")
-    public ResponseEntity<?> addAuthor(@RequestBody Category category) {
+    public ResponseEntity<?> addAuthor(@Valid @RequestBody Category category) {
         try {
             return ResponseEntity.ok(categoryService.addCategories(category));
         } catch (InvalidEntityException e) {
@@ -40,7 +41,7 @@ public class CategoryController {
     }
 
     @PatchMapping("/patch/category")
-    public ResponseEntity<?> updateAuthor(@RequestBody Category category) {
+    public ResponseEntity<?> updateAuthor(@Valid @RequestBody Category category) {
         try {
             return ResponseEntity.ok(categoryService.updateCategories(category));
         } catch (EntityNotFoundException e) {

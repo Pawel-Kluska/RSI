@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Collection;
 import java.util.List;
 
@@ -37,7 +38,7 @@ public class EquipmentController {
     }
 
     @PostMapping("/post/equipment")
-    public ResponseEntity<?> addEquipment(@RequestBody Equipment equipment) {
+    public ResponseEntity<?> addEquipment(@Valid @RequestBody Equipment equipment) {
         try {
             return ResponseEntity.ok(equipmentService.addEquipment(equipment));
         } catch (InvalidEntityException e) {
@@ -46,7 +47,7 @@ public class EquipmentController {
     }
 
     @PatchMapping("/patch/equipment")
-    public ResponseEntity<?> updateEquipment(@RequestBody Equipment equipment) {
+    public ResponseEntity<?> updateEquipment(@Valid @RequestBody Equipment equipment) {
         try {
             return ResponseEntity.ok(equipmentService.updateEquipment(equipment));
         } catch (EntityNotFoundException e) {
@@ -83,6 +84,11 @@ public class EquipmentController {
         } catch (EntityNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/get/equipments/size/{size}")
+    public ResponseEntity<List<Equipment>> getEquipmentsBySize(@PathVariable String size) {
+        return ResponseEntity.ok(equipmentService.getEquipmentsBySize(size));
     }
 
     @GetMapping("/get/equipments/countBorrowed")
